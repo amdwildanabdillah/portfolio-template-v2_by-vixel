@@ -1,0 +1,483 @@
+:root {
+  /* Modifikasi Warna - Fresh & Hangat */
+  --bg-main: #FDF9F1;
+  --bg-secondary: #FFF1E6;
+  --bg-card: #FFFFFF;
+  --accent-color: #E2856E; /* Soft Terracotta */
+  --accent-hover: #D1745E;
+  --badge-bg: #FAD4C0;
+  --text-dark: #33272A;
+  --text-muted: #594A4E;
+  
+  --font-serif: 'Eczar', Georgia, serif;
+  --font-sans: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-hand: 'Patrick Hand', cursive;
+  
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 50px; /* Bentuk tombol modern */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-muted);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================================
+   STICKY HEADER & NAV
+========================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(253, 249, 241, 0.85); /* Sesuai bg-main */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 16px 0;
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 24px 100px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--badge-bg);
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4.5vw, 60px);
+  color: var(--text-dark);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  margin-bottom: 40px;
+}
+
+.cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   BUTTONS (Pill Style)
+========================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: white;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 4px 14px rgba(226, 133, 110, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-dark);
+  border: 2px solid var(--text-dark);
+}
+
+.btn-outline:hover {
+  background: var(--text-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   HERO GRAPHIC
+========================================= */
+.hero-image-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.doodle-text {
+  position: absolute;
+  bottom: 20px;
+  left: -10px;
+  font-family: var(--font-hand);
+  font-size: 24px;
+  color: var(--text-dark);
+  transform: rotate(-8deg);
+  background: var(--badge-bg);
+  padding: 6px 16px;
+  border-radius: var(--radius-md);
+  box-shadow: 2px 4px 0px rgba(0,0,0,0.1); /* Neo-brutalism touch */
+}
+
+/* =========================================
+   WORK SECTION
+========================================= */
+.work-section {
+  background-color: var(--bg-secondary);
+  padding: 100px 0;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 3.5vw, 42px);
+  color: var(--text-dark);
+  margin-bottom: 40px;
+}
+
+.work-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.work-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+  /* Modifikasi Style - Soft Shadow Boundary */
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 4px 8px 24px rgba(226, 133, 110, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+}
+
+.work-info h3 {
+  font-size: 28px;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.work-info p {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.link-case-study {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link-case-study:hover {
+  text-decoration: underline;
+}
+
+.work-preview img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* =========================================
+   TESTIMONIALS
+========================================= */
+.testimonials-section {
+  padding: 100px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.testimonial-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 900px;
+}
+
+.testimonial-card {
+  padding: 32px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+
+.quote {
+  font-size: 16px;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.author {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.role {
+  font-size: 14px;
+  color: var(--accent-color);
+}
+
+.slider-btn {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 18px;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.slider-btn:hover {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+.about-section {
+  background-color: var(--bg-secondary);
+  padding: 100px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: -8px 8px 0px var(--badge-bg); /* Efek tumpuk asik */
+}
+
+/* =========================================
+   FOOTER CTA
+========================================= */
+.footer-cta {
+  padding: 100px 0;
+}
+
+.cta-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.cta-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 50%;
+  color: var(--text-dark);
+  font-size: 20px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+@media (max-width: 900px) {
+  /* Munculkan Hamburger Menu */
+  .hamburger {
+    display: block;
+  }
+  
+  /* Sembunyikan Navigasi biasa, jadikan dropdown */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-card);
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    
+    /* Disembunyikan dulu sampai di-klik */
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.3s ease-in-out;
+  }
+  
+  .nav-links.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    display: block;
+    text-align: center;
+  }
+
+  /* Susunan Kolom */
+  .hero, .about-grid, .work-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonial-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-image-wrapper {
+    order: -1;
+  }
+  
+  .doodle-text {
+    bottom: 10px;
+    left: 0px;
+  }
+}
